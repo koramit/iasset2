@@ -3,16 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+// use Laravel\Scout\Searchable;
 
 class Building extends Model
 {
-    use Searchable;
+    // use Searchable;
     protected $fillable = [
         'id',
         'name'
     ];
-    
+
     public static function loadData($fileName){
         $buildingRecords = loadCSV($fileName);
         foreach($buildingRecords as $buildingRecord){
@@ -22,5 +22,5 @@ class Building extends Model
     public function BuildingLocation () {
         return $this->hasMany(Location::class,'building_id');
     }
-    
+
 }

@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+// use Laravel\Scout\Searchable;
 
 class Client extends Model
 {
-   use Searchable;
+   // use Searchable;
    //column ที่สามารถเพิ่มและแก้ไขข้อมูล
    protected $fillable = [
       'id',
@@ -70,7 +70,7 @@ class Client extends Model
    ];
 
    //แสดงความสัมพันธ์กับตาราง Display
-   public function displays () 
+   public function displays ()
    {
       return $this->hasMany(Display::class,'client_id');
    }
@@ -148,7 +148,7 @@ class Client extends Model
          case '1':
             return 'มี';
             break;
-         
+
          default:
             return 'ไม่ทราบ';
             break;

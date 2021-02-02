@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
 
-class Storageperipherals extends Model
+// use Laravel\Scout\Searchable;
+
+class storageperipherals extends Model
 {
-    use Searchable;
+    // use Searchable;
     //column ที่สามารถเพิ่มและแก้ไขข้อมูล
     protected $fillable = [
         'id',
@@ -36,50 +37,58 @@ class Storageperipherals extends Model
         'lun_count',
         'issues',
     ];
+
     //แสดงความสัมพันธ์กับตาราง Section
-    public function section ()
+    public function section()
     {
-       return $this->belongsTo(Section::class,'section_id');
+        return $this->belongsTo(Section::class, 'section_id');
     }
-    
+
     //แสดงความสัมพันธ์กับตาราง Mobility
     public function StorageperipheralMobility()
     {
-        return $this->belongsTo(Mobility::class,'mobility_id');
+        return $this->belongsTo(Mobility::class, 'mobility_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Multiuser
-    public function StoragePeripheralMultiUser ()
+    public function StoragePeripheralMultiUser()
     {
-        return $this->belongsTo(Multiuser::class,'multi_user_id');
+        return $this->belongsTo(Multiuser::class, 'multi_user_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Room
-    public function StoragePeripheralRoom ()
+    public function StoragePeripheralRoom()
     {
-        return $this->belongsTo(Room::class,'location_id');
+        return $this->belongsTo(Room::class, 'location_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Position
-    public function StoragePeripheralPosition ()
+    public function StoragePeripheralPosition()
     {
-        return $this->belongsTo(Position::class,'position_id');
+        return $this->belongsTo(Position::class, 'position_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Owner
-    public function StoragePeripheralOwner ()
+    public function StoragePeripheralOwner()
     {
-        return $this->belongsTo(Owner::class,'owner_id');
+        return $this->belongsTo(Owner::class, 'owner_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Asset_statuses
-    public function StoragePeripheralAssetStatus ()
+    public function StoragePeripheralAssetStatus()
     {
-        return $this->belongsTo(Asset_statuses::class,'asset_status_id');
+        return $this->belongsTo(Asset_statuses::class, 'asset_status_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Asset_use_statuses
-    public function StoragePeripheralAssetUseStatus ()
+    public function StoragePeripheralAssetUseStatus()
     {
-        return $this->belongsTo(Asset_use_statuses::class,'asset_use_status_id');
+        return $this->belongsTo(Asset_use_statuses::class, 'asset_use_status_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง DataUnit
-    public function StoragePeripheralDataUnit ()
+    public function StoragePeripheralDataUnit()
     {
-        return $this->belongsTo(DataUnit::class,'data_unit_id');
+        return $this->belongsTo(DataUnit::class, 'data_unit_id');
     }
 }

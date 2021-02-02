@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+
+// use Laravel\Scout\Searchable;
 
 class Upses extends Model
 {
-    use Searchable;
+    // use Searchable;
     //column ที่สามารถเพิ่มและแก้ไขข้อมูล
     protected $fillable = [
         'id',
@@ -34,49 +35,58 @@ class Upses extends Model
         'issues',
         'remarks',
     ];
+
     //แสดงความสัมพันธ์กับตาราง Room
-    public function UpsRoom ()
+    public function UpsRoom()
     {
-        return $this->belongsTo(Room::class,'location_id');
+        return $this->belongsTo(Room::class, 'location_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Section
-    public function UpsSection ()
+    public function UpsSection()
     {
-        return $this->belongsTo(Section::class,'section_id');
+        return $this->belongsTo(Section::class, 'section_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Mobility
-    public function UpsMobility ()
+    public function UpsMobility()
     {
-        return $this->belongsTo(Mobility::class,'mobility_id');
+        return $this->belongsTo(Mobility::class, 'mobility_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Owner
-    public function UpsOwner ()
+    public function UpsOwner()
     {
-        return $this->belongsTo(Owner::class,'owner_id');
+        return $this->belongsTo(Owner::class, 'owner_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Asset_statuses
-    public function UpsAssetStatus ()
+    public function UpsAssetStatus()
     {
-       return $this->belongsTo(Asset_statuses::class,'asset_status_id');
+        return $this->belongsTo(Asset_statuses::class, 'asset_status_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Asset_use_statuses
-    public function UpsAssetUseStatus ()
+    public function UpsAssetUseStatus()
     {
-       return $this->belongsTo(Asset_use_statuses::class,'asset_use_status_id');
+        return $this->belongsTo(Asset_use_statuses::class, 'asset_use_status_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Formfactor
-    public function UpsFormFactor ()
+    public function UpsFormFactor()
     {
-        return $this->belongsTo(Formfactor::class,'form_factor_id');
+        return $this->belongsTo(Formfactor::class, 'form_factor_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Topology
-    public function UpsTopology ()
+    public function UpsTopology()
     {
-        return $this->belongsTo(Topology::class,'topology_id');
+        return $this->belongsTo(Topology::class, 'topology_id');
     }
+
     //แสดงความสัมพันธ์กับตาราง Upsbatterytype
-    public function UpsBatteryType ()
+    public function UpsBatteryType()
     {
-        return $this->belongsTo(Upsbatterytype::class,'battery_type_id');
+        return $this->belongsTo(Upsbatterytype::class, 'battery_type_id');
     }
 }

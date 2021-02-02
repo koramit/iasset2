@@ -3,18 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+
+// use Laravel\Scout\Searchable;
 
 class Upsbatterytype extends Model
 {
-    use Searchable;
-    protected $fillable =[
+    // use Searchable;
+    protected $fillable = [
         'id',
         'name',
     ];
+
     //แสดงความสัมพันธ์กับตาราง Upses
-    public function BatteryTypeUps ()
+    public function BatteryTypeUps()
     {
-        return $this->hasMany(Upses::class,'battery_type_id');
+        return $this->hasMany(Upses::class, 'battery_type_id');
     }
 }

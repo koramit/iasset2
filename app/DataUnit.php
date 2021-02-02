@@ -3,15 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+// use Laravel\Scout\Searchable;
 
 class DataUnit extends Model
 {
-    use Searchable;
+    // use Searchable;
     //column ที่แก้ไขข้อมูลได้
     protected $fillable =[
     'id',
-    'name',    
+    'name',
     ];
     //แสดงความสัมพันธ์กับตาราง Client
     public function DataUnitClient()

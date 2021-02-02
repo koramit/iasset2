@@ -3,18 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
+
+// use Laravel\Scout\Searchable;
 
 class Topology extends Model
 {
-    use Searchable;
+    // use Searchable;
     protected $fillable = [
         'id',
-        'name'
+        'name',
     ];
+
     //แสดงความสัมพันธ์กับตาราง Upses
-    public function TopologyUps ()
+    public function TopologyUps()
     {
-        return $this->hasMany(Upses::class,'topology_id');
+        return $this->hasMany(Upses::class, 'topology_id');
     }
 }
