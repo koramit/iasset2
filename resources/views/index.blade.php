@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="col-12 mx-auto">
-            <form action="{{ url('/search-query') }}" method="get" role="search" >
+            <form action="{{ url('/') }}" method="get" role="search" >
                 {{-- @csrf --}}
                 <div class="form-row">
                     <div class="col-sm-12 col-lg-6">
